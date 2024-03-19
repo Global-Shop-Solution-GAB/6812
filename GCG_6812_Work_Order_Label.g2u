@@ -1,0 +1,776 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.FormWOLabel..Create(BaseForm)
+Gui.FormWOLabel..Caption("Work Order Assembly / Box Labels")
+Gui.FormWOLabel..Size(12525,10260)
+Gui.FormWOLabel..MinX(0)
+Gui.FormWOLabel..MinY(0)
+Gui.FormWOLabel..Position(0,0)
+Gui.FormWOLabel..BackColor(-2147483633)
+Gui.FormWOLabel..MousePointer(0)
+Gui.FormWOLabel..Event(UnLoad,FormWOLabel_UnLoad)
+Gui.FormWOLabel..AlwaysOnTop(False)
+Gui.FormWOLabel..FontName("Tahoma")
+Gui.FormWOLabel..FontSize(8.25)
+Gui.FormWOLabel..ControlBox(True)
+Gui.FormWOLabel..MaxButton(True)
+Gui.FormWOLabel..MinButton(True)
+Gui.FormWOLabel..Moveable(True)
+Gui.FormWOLabel..Sizeable(True)
+Gui.FormWOLabel..ShowInTaskBar(True)
+Gui.FormWOLabel..TitleBar(True)
+Gui.FormWOLabel.lblJob.Create(Label,"WO",True,645,255,0,195,165,True,0,"Arial",8,-2147483633,0,0)
+Gui.FormWOLabel.lblJob.BorderStyle(0)
+Gui.FormWOLabel.txtJob.Create(TextBox,"",True,1215,300,0,210,405,True,0,"Arial",8,-2147483643,1)
+Gui.FormWOLabel.txtJob.Event(GotFocus,txtJob_GotFocus)
+Gui.FormWOLabel.txtJob.Locked(True)
+Gui.FormWOLabel.txtSuffix.Create(TextBox,"",True,600,300,0,1590,405,True,0,"Arial",8,-2147483643,1)
+Gui.FormWOLabel.txtSuffix.Event(GotFocus,txtSuffix_GotFocus)
+Gui.FormWOLabel.txtSuffix.Event(LostFocus,txtSuffix_LostFocus)
+Gui.FormWOLabel.txtSuffix.Locked(True)
+Gui.FormWOLabel.lblSuffix.Create(Label,"Suffix",True,645,255,0,1590,165,True,0,"Arial",8,-2147483633,0,0)
+Gui.FormWOLabel.lblSuffix.BorderStyle(0)
+Gui.FormWOLabel.cmdWO.Create(Button)
+Gui.FormWOLabel.cmdWO.Size(420,375)
+Gui.FormWOLabel.cmdWO.Position(1590,360)
+Gui.FormWOLabel.cmdWO.Caption("^")
+Gui.FormWOLabel.cmdWO.Event(Click,cmdWO_Click)
+Gui.FormWOLabel.cmdWO.Enabled(True)
+Gui.FormWOLabel.cmdWO.Visible(True)
+Gui.FormWOLabel.cmdWO.Zorder(0)
+Gui.FormWOLabel.cmdWO.FontName("Tahoma")
+Gui.FormWOLabel.cmdWO.FontSize(8.25)
+Gui.FormWOLabel.GsGridAssembly.Create(GsGridControl)
+Gui.FormWOLabel.GsGridAssembly.Size(8625,4935)
+Gui.FormWOLabel.GsGridAssembly.Position(195,1200)
+Gui.FormWOLabel.GsGridAssembly.Anchor(13)
+Gui.FormWOLabel.GsGridAssembly.Enabled(True)
+Gui.FormWOLabel.GsGridAssembly.Visible(True)
+Gui.FormWOLabel.GsGridAssembly.Zorder(0)
+Gui.FormWOLabel.lblAssembly.Create(Label,"Assembly",True,1020,255,0,195,960,True,0,"Arial",8,-2147483633,0,0)
+Gui.FormWOLabel.lblAssembly.BorderStyle(0)
+Gui.FormWOLabel.GsGridBox.Create(GsGridControl)
+Gui.FormWOLabel.GsGridBox.Size(12045,2610)
+Gui.FormWOLabel.GsGridBox.Position(195,6585)
+Gui.FormWOLabel.GsGridBox.Anchor(15)
+Gui.FormWOLabel.GsGridBox.Enabled(True)
+Gui.FormWOLabel.GsGridBox.Visible(True)
+Gui.FormWOLabel.GsGridBox.Zorder(0)
+Gui.FormWOLabel.lblBox.Create(Label,"Box",True,1020,255,0,195,6345,True,0,"Arial",8,-2147483633,0,0)
+Gui.FormWOLabel.lblBox.BorderStyle(0)
+Gui.FormWOLabel.cmdPrint.Create(Button)
+Gui.FormWOLabel.cmdPrint.Size(855,375)
+Gui.FormWOLabel.cmdPrint.Position(195,9300)
+Gui.FormWOLabel.cmdPrint.Anchor(6)
+Gui.FormWOLabel.cmdPrint.Caption("Print")
+Gui.FormWOLabel.cmdPrint.Event(Click,cmdPrint_Click)
+Gui.FormWOLabel.cmdPrint.Enabled(True)
+Gui.FormWOLabel.cmdPrint.Visible(True)
+Gui.FormWOLabel.cmdPrint.Zorder(0)
+Gui.FormWOLabel.cmdPrint.FontName("Tahoma")
+Gui.FormWOLabel.cmdPrint.FontSize(8.25)
+Gui.FormWOLabel.lblPrinter.Create(Label,"Assembly Label Printer",True,1935,255,0,6705,180,True,0,"Arial",8,-2147483633,0,0)
+Gui.FormWOLabel.lblPrinter.BorderStyle(0)
+Gui.FormWOLabel.ddlPrinter.Create(DropDownList)
+Gui.FormWOLabel.ddlPrinter.Size(2085,330)
+Gui.FormWOLabel.ddlPrinter.Position(6705,450)
+Gui.FormWOLabel.ddlPrinter.Enabled(True)
+Gui.FormWOLabel.ddlPrinter.Visible(True)
+Gui.FormWOLabel.ddlPrinter.Zorder(0)
+Gui.FormWOLabel.ddlPrinter.FontName("Tahoma")
+Gui.FormWOLabel.ddlPrinter.FontSize(8.25)
+Gui.FormWOLabel.lblPrinter2.Create(Label,"Box Label Printer",True,1935,255,0,8970,180,True,0,"Arial",8,-2147483633,0,0)
+Gui.FormWOLabel.lblPrinter2.BorderStyle(0)
+Gui.FormWOLabel.ddlPrinter2.Create(DropDownList)
+Gui.FormWOLabel.ddlPrinter2.Size(2085,330)
+Gui.FormWOLabel.ddlPrinter2.Position(9015,450)
+Gui.FormWOLabel.ddlPrinter2.Enabled(True)
+Gui.FormWOLabel.ddlPrinter2.Visible(True)
+Gui.FormWOLabel.ddlPrinter2.Zorder(0)
+Gui.FormWOLabel.ddlPrinter2.FontName("Tahoma")
+Gui.FormWOLabel.ddlPrinter2.FontSize(8.25)
+Gui.FormWOLabel.chkAddBox.Create(CheckBox)
+Gui.FormWOLabel.chkAddBox.Enabled(True)
+Gui.FormWOLabel.chkAddBox.Visible(True)
+Gui.FormWOLabel.chkAddBox.Zorder(0)
+Gui.FormWOLabel.chkAddBox.Size(1875,300)
+Gui.FormWOLabel.chkAddBox.Position(915,6225)
+Gui.FormWOLabel.chkAddBox.Caption("Additional Box Label")
+Gui.FormWOLabel.chkAddBox.FontName("Tahoma")
+Gui.FormWOLabel.chkAddBox.FontSize(8.25)
+Gui.FormWOLabel.txtAddBox.Create(TextBox,"",True,1500,300,0,3780,6210,True,0,"Tahoma",8.25,,1)
+Gui.FormWOLabel.lblAddBox.Create(Label,"Value:",True,450,195,0,3300,6270,True,0,"Tahoma",8.25,,0,0)
+Gui.FormWOLabel.lblAddBox.BorderStyle(0)
+Gui.FormWOLabel.lblAddBoxLblQty.Create(Label,"Lbl Qty:",True,570,195,0,5415,6255,True,0,"Tahoma",8.25,,0,0)
+Gui.FormWOLabel.lblAddBoxLblQty.BorderStyle(0)
+Gui.FormWOLabel.txtAddBoxLblQty.Create(TextBox,"",True,480,300,0,6045,6210,True,0,"Tahoma",8.25,,1)
+Gui.FormWOLabel.txtAddBoxLblQty.NumericOnly(2)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+Program.External.Include.Library("410000.lib")
+V.Global.iAssembly.Declare(Long,0)
+V.Global.iBox.Declare(Long,0)
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+
+Gui.FormWOLabel.txtSuffix.Visible(False)
+Gui.FormWOLabel.lblSuffix.Visible(False)
+
+Gui.FormWOLabel.chkAddBox.Value(False)
+
+F.Intrinsic.Control.CallSub(Get_Data)
+F.Intrinsic.Control.CallSub(Set_Prop)
+
+Gui.FormWOLabel..Show
+Gui.FormWOLabel..AlwaysOnTop(True)
+Gui.FormWOLabel..AlwaysOnTop(False)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6812_Work_Order_Label.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormWOLabel_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Main.End
+
+Program.Sub.txtJob_GotFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtJob_GotFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtJob_GotFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6812_Work_Order_Label.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormWOLabel_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.txtJob_GotFocus.End
+
+Program.Sub.txtSuffix_GotFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtSuffix_GotFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtSuffix_GotFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6812_Work_Order_Label.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormWOLabel_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.txtSuffix_GotFocus.End
+
+Program.Sub.txtSuffix_LostFocus.Start
+F.Intrinsic.Control.SetErrorHandler("txtSuffix_LostFocus_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+
+F.Intrinsic.Control.If(V.Screen.FormWOLabel!txtJob.Text,<>,"")
+	F.Intrinsic.Control.CallSub(Get_Data)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("txtSuffix_LostFocus_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6812_Work_Order_Label.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormWOLabel_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.txtSuffix_LostFocus.End
+
+Program.Sub.cmdWO_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdWO_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+V.Local.sSql.Declare(String,"")
+V.Local.sTitles.Declare(String,"")
+V.Local.sWidths.Declare(String,"")
+V.Local.sRet.Declare(String,"")	
+	
+F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+
+'F.Intrinsic.UI.Browser(1000,"",V.Local.sRet)
+
+F.Intrinsic.String.Split("WO*!*Part*!*Description","*!*",V.Local.sTitles)
+F.Intrinsic.String.Split("500*!*500*!*1000","*!*",V.Local.sWidths)
+
+F.ODBC.Connection!Conx.OpenCompanyConnection
+F.Intrinsic.UI.Browser("Select WO","conx","Select Job, a.Part, Description From V_Job_Header a Join V_Bom_Mstr b on a.Part = b.Parent Where Date_Closed = '1900-01-1' and Suffix = '000' Order by Job",V.Local.sTitles,V.Local.sWidths,"16000","8000",V.Local.sRet)
+F.ODBC.Connection!Conx.Close
+F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+	F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+	Gui.FormWOLabel.txtJob.Text(V.Local.sRet.Trim)
+	Gui.FormWOLabel.txtSuffix.Text("000")
+	F.Intrinsic.Control.CallSub(Get_Data)
+F.Intrinsic.Control.EndIf
+
+Gui.FormWOLabel..AlwaysOnTop(True)
+Gui.FormWOLabel..AlwaysOnTop(False)
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdWO_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6812_Work_Order_Label.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormWOLabel_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdWO_Click.End
+
+Program.Sub.cmdPrint_Click.Start
+F.Intrinsic.Control.SetErrorHandler("cmdPrint_Click_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+V.Local.sPrint1.Declare(String,"")
+V.Local.sPrint2.Declare(String,"")
+V.Local.iRunID.Declare(Long,0)
+V.Local.iLogID.Declare(Long,0)
+V.Local.iLblQty.Declare(Long,0)
+
+F.Intrinsic.Control.If(V.Screen.FormWOLabel!txtAddBoxLblQty.Text,<>,"")
+	V.Local.iLblQty.Set(V.Screen.FormWOLabel!txtAddBoxLblQty.Text)
+F.Intrinsic.Control.EndIf
+
+V.Local.sPrint1.Set(V.Screen.FormWOLabel!ddlPrinter.Text)
+V.Local.sPrint2.Set(V.Screen.FormWOLabel!ddlPrinter2.Text)
+
+F.Intrinsic.Control.If(V.DataView.Assembly!VAssembly.RowCount--,<>,-1,"AND",V.DataView.Box!VBox.RowCount--,<>,-1)
+	F.Intrinsic.Control.If(V.Local.sPrint1.Trim,=,"","AND",V.Local.sPrint2,<>,"")
+		F.Intrinsic.UI.Msgbox("Assembly Label Printer Needs to be Selected.","Attention")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.ElseIf(V.Local.sPrint1.Trim,<>,"","AND",V.Local.sPrint2,=,"")
+		F.Intrinsic.UI.Msgbox("Box Label Printer Needs to be Selected.","Attention")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.ElseIf(V.Local.sPrint1.Trim,=,"","AND",V.Local.sPrint2,=,"")
+		F.Intrinsic.UI.Msgbox("Assembly and Box Label Printer Needs to be Selected.","Attention")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.ToDataTable("Assembly","VAssembly","AssemblyLabel",True)
+	F.Data.DataView.ToDataTable("Box","VBox","BoxLabel",True)
+	F.Data.DataTable.RemoveColumn("AssemblyLabel","Selection")
+	F.Data.DataTable.RemoveColumn("BoxLabel","Selection")
+	F.Global.BI.GetRunID(V.Local.iRunID)
+	F.Global.BI.StartLogging(V.Local.iRunID,V.Global.iAssembly,-1,"GCG_6812_Assembly_Label",V.Local.iLogID)
+	F.Global.BI.StopLogging(V.Local.iLogID)
+	F.Global.BI.PrintCodesoftLabelFromDataTable(V.Local.iRunID,V.Local.iLogID,"AssemblyLabel",V.Local.sPrint1,False)
+	F.Global.BI.GetRunID(V.Local.iRunID)
+	F.Intrinsic.Control.If(V.Screen.FormWOLabel!chkAddBox.Value,=,1,"AND",V.Local.iLblQty,>,0)
+		F.Data.DataTable.AddRow("BoxLabel","Box_Number",V.Screen.FormWOLabel!txtAddBox.Text,"Label_Copy",V.Local.iLblQty,"SO",V.DataTable.Box(V.DataTable.Box.RowCount--).SO!FieldValTrim,"Customer_Name",V.DataTable.Box(V.DataTable.Box.RowCount--).Customer_Name!FieldValTrim,"Kit_MODEL",V.DataTable.Box(V.DataTable.Box.RowCount--).Kit_Model!FieldValTrim)
+	F.Intrinsic.Control.EndIf
+	F.Global.BI.StartLogging(V.Local.iRunID,V.Global.iBox,-1,"GCG_6812_Box_Label",V.Local.iLogID)
+	F.Global.BI.StopLogging(V.Local.iLogID)
+	F.Global.BI.PrintCodesoftLabelFromDataTable(V.Local.iRunID,V.Local.iLogID,"BoxLabel",V.Local.sPrint2,False)
+	F.Data.DataTable.Close("AssemblyLabel")
+	F.Data.DataTable.Close("BoxLabel")
+F.Intrinsic.Control.ElseIf(V.DataView.Assembly!VAssembly.RowCount--,<>,-1,"AND",V.DataView.Box!VBox.RowCount--,=,-1)
+	F.Intrinsic.Control.If(V.Local.sPrint1.Trim,=,"")
+		F.Intrinsic.UI.Msgbox("Assembly Label Printer Needs to be Selected.")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.ToDataTable("Assembly","VAssembly","AssemblyLabel",True)
+	F.Data.DataTable.RemoveColumn("AssemblyLabel","Selection")
+	F.Global.BI.GetRunID(V.Local.iRunID)
+	F.Global.BI.StartLogging(V.Local.iRunID,V.Global.iAssembly,-1,"GCG_6812_Assembly_Label",V.Local.iLogID)
+	F.Global.BI.StopLogging(V.Local.iLogID)
+	F.Global.BI.PrintCodesoftLabelFromDataTable(V.Local.iRunID,V.Local.iLogID,"AssemblyLabel",V.Local.sPrint1,False)
+	F.Global.BI.GetRunID(V.Local.iRunID)
+	F.Data.DataTable.Close("AssemblyLabel")
+F.Intrinsic.Control.ElseIf(V.DataView.Assembly!VAssembly.RowCount--,=,-1,"AND",V.DataView.Box!VBox.RowCount--,<>,-1)
+	F.Intrinsic.Control.If(V.Local.sPrint2,=,"")
+		F.Intrinsic.UI.Msgbox("Box Label Printer Needs to be Selected.","Attention")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	F.Data.DataView.ToDataTable("Box","VBox","BoxLabel",True)
+	F.Data.DataTable.RemoveColumn("BoxLabel","Selection")
+	F.Intrinsic.Control.If(V.Screen.FormWOLabel!chkAddBox.Value,=,1,"AND",V.Local.iLblQty,>,0)
+		F.Data.DataTable.AddRow("BoxLabel","Box_Number",V.Screen.FormWOLabel!txtAddBox.Text,"Label_Copy",V.Local.iLblQty,"SO",V.DataTable.Box(V.DataTable.Box.RowCount--).SO!FieldValTrim,"Customer_Name",V.DataTable.Box(V.DataTable.Box.RowCount--).Customer_Name!FieldValTrim,"Kit_MODEL",V.DataTable.Box(V.DataTable.Box.RowCount--).Kit_Model!FieldValTrim)
+	F.Intrinsic.Control.EndIf
+	F.Global.BI.GetRunID(V.Local.iRunID)
+	F.Global.BI.StartLogging(V.Local.iRunID,V.Global.iBox,-1,"GCG_6812_Box_Label",V.Local.iLogID)
+	F.Global.BI.StopLogging(V.Local.iLogID)
+	F.Global.BI.PrintCodesoftLabelFromDataTable(V.Local.iRunID,V.Local.iLogID,"BoxLabel",V.Local.sPrint2,False)
+	F.Data.DataTable.Close("BoxLabel")
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.BlockEvents
+'Gui.FormWOLabel.txtJob.Text("")
+'Gui.FormWOLabel.txtSuffix.Text("")
+F.Intrinsic.Control.If(V.DataTable.Assembly.RowCount--,<>,-1)
+	F.Data.DataTable.SetValue("Assembly",-1,"SELECTION",False)
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.If(V.DataTable.Assembly.RowCount--,<>,-1)
+	F.Data.DataTable.SetValue("Box",-1,"SELECTION",False)
+F.Intrinsic.Control.EndIf
+Gui.FormWOLabel.chkAddBox.Value(False)
+'F.Data.DataTable.DeleteRow("Assembly")
+'F.Data.DataTable.AcceptChanges("Assembly")
+'F.Data.DataTable.DeleteRow("Box")
+'F.Data.DataTable.AcceptChanges("Box")
+	
+F.Intrinsic.Control.UnBlockEvents
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("cmdPrint_Click_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6812_Work_Order_Label.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormWOLabel_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.cmdPrint_Click.End
+
+Program.Sub.FormWOLabel_UnLoad.Start
+F.Intrinsic.Control.SetErrorHandler("FormWOLabel_UnLoad_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("FormWOLabel_UnLoad_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.Control.End
+Function.Intrinsic.Control.EndIf
+Program.Sub.FormWOLabel_UnLoad.End
+
+Program.Sub.Get_Data.Start
+F.Intrinsic.Control.SetErrorHandler("Get_Data_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+V.Local.sSql.Declare(String,"")
+V.Local.sFile.Declare(String,"")
+V.Local.sData.Declare(String,"")
+V.Local.sParent.Declare(String,"")
+V.Local.sBomSplit.Declare(String,"")
+V.Local.i.Declare(Long,0)
+V.Local.sFields.Declare(String,"")
+V.Local.sTypes.Declare(String,"")
+V.Local.sTemp.Declare(String,"")
+V.Local.fQty.Declare(Float,0)
+V.Local.sRev.Declare(String,"")
+V.Local.bUseRev.Declare(Boolean,False)
+V.Local.sStatus.Declare(String,"")
+v.Local.sRet.Declare(StringList)
+v.local.sDelimString.Declare(String,"")
+V.Local.sLocation.Declare(String,"")
+V.Local.sModel.Declare(String,"")
+
+F.Global.General.ReadOption("070008",0,False,"0000",V.Local.bUseRev)
+
+F.Intrinsic.Control.If(V.DataTable.Assembly.Exists)
+	Gui.FormWOLabel..Enabled(False)
+	F.Intrinsic.UI.InvokeWaitDialog("Building Label Data.........")
+	F.ODBC.Connection!Con.OpenCompanyConnection
+	F.Intrinsic.String.Build("Select Part From V_Job_Header Where Job = '{0}' and Suffix = '{1}'",V.Screen.FormWOLabel!txtJob.Text,V.Screen.FormWOLabel!txtSuffix.Text,V.Local.sSql)
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSql,V.Local.sParent)
+	F.Intrinsic.String.Build("Select Description From V_Job_Header Where Job = '{0}' and Suffix = '{1}'",V.Screen.FormWOLabel!txtJob.Text,V.Screen.FormWOLabel!txtSuffix.Text,V.Local.sSql)
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSql,V.Local.sModel)
+	F.Intrinsic.String.Build("Select Location From V_Job_Header Where Job = '{0}' and Suffix = '{1}'",V.Screen.FormWOLabel!txtJob.Text,V.Screen.FormWOLabel!txtSuffix.Text,V.Local.sSql)
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSql,V.Local.sLocation)
+	F.Intrinsic.String.Build("Select Qty_Order From V_Job_Header Where Job = '{0}' and Suffix = '{1}'",V.Screen.FormWOLabel!txtJob.Text,V.Screen.FormWOLabel!txtSuffix.Text,V.Local.sSql)
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSql,V.Local.fQty)
+	F.Data.Dictionary.CreateFromSQL("UM","con","Select rtrim(Part), UM_Inventory From V_Inventory_Mstr")
+	F.Data.Dictionary.SetDefaultReturn("UM","")
+	F.Intrinsic.String.Build("Select rtrim(Part), Suffix From V_Job_Header Where Job = '{0}'",V.Screen.FormWOLabel!txtJob.Text,V.Local.sSql)
+	F.Data.Dictionary.CreateFromSQL("Suffix","con",V.Local.sSql)
+	F.Data.Dictionary.SetDefaultReturn("Suffix","")
+	F.Intrinsic.String.Build("Select Distinct rtrim(Job), Name_Customer From V_Job_Header a Left Join V_Customer_Master b on a.Customer = b.Customer Where Job = '{0}'",V.Screen.FormWOLabel!txtJob.Text,V.Local.sSql)
+	F.Data.Dictionary.CreateFromSQL("Cust","con",V.Local.sSql)
+	F.Data.Dictionary.SetDefaultReturn("Cust","")
+'	F.Intrinsic.String.Build("Select Suffix, Qty_Order From V_Job_Header Where Job = '{0}'",V.Screen.FormWOLabel!txtJob.Text,V.Local.sSql)
+'	F.Data.Dictionary.CreateFromSQL("Qty","con",V.Local.sSql)
+'	F.Data.Dictionary.SetDefaultReturn("Qty","0")
+	F.Intrinsic.String.Build("Select Job, Sales_Order From V_Job_Header Where Job = '{0}'",V.Screen.FormWOLabel!txtJob.Text,V.Local.sSql)
+	F.Data.Dictionary.CreateFromSQL("SO","con",V.Local.sSql)
+	F.Data.Dictionary.SetDefaultReturn("SO","")
+	F.Intrinsic.String.Build("Select Suffix, Sales_Order_Line From V_Job_Header Where Job = '{0}'",V.Screen.FormWOLabel!txtJob.Text,V.Local.sSql)
+	F.Data.Dictionary.CreateFromSQL("Line","con",V.Local.sSql)
+	F.Data.Dictionary.SetDefaultReturn("Line","")
+'	F.Intrinsic.String.Build("Select Suffix, Description From V_Job_Header Where Job = '{0}'",V.Screen.FormWOLabel!txtJob.Text,V.Local.sSql)
+'	F.Data.Dictionary.CreateFromSQL("Desc","con",V.Local.sSql)
+'	F.Data.Dictionary.SetDefaultReturn("Desc","")
+	F.Data.Dictionary.CreateFromSQL("Tag","con","Select Distinct If(Part = '',rtrim(Parent)+rtrim(Parent),rtrim(Parent)+rtrim(Part)), Left(Tag,2) From V_Bom_Mstr Where ISNUMERIC(Left(Tag,2)) = 1 and Tag <> ''")
+	F.Data.Dictionary.SetDefaultReturn("Tag","0")
+	
+'	F.Data.Dictionary.CreateFromSQL("Desc","con","Select Distinct rtrim(Part), Description From V_Bom_Eng")
+'	F.Data.Dictionary.SetDefaultReturn("Desc","")
+'	F.Intrinsic.String.Build("{0}",V.Caller.User,V.Local.sFile)
+'	F.Data.DataTable.AddRow("410000","FilePath",V.Caller.LocalGSSTempDir,"FileName",V.Local.sFile,"BomType","0","Part",V.Local.sParent.Trim,"Quantity",1)
+'	F.Intrinsic.Control.CallSub(410000Sync)
+'	F.Intrinsic.Control.If(V.Caller.LocalGSSTempDir.Right1,=,"\")
+'		F.Intrinsic.String.Build("{0}{1}",V.Caller.LocalGSSTempDir,V.Local.sFile,V.Local.sFile)
+'	F.Intrinsic.Control.Else
+'		F.Intrinsic.String.Build("{0}\{1}",V.Caller.LocalGSSTempDir,V.Local.sFile,V.Local.sFile)
+'	F.Intrinsic.Control.EndIf
+'	F.Intrinsic.File.File2String(V.Local.sFile,V.Local.sData)
+'	F.Intrinsic.String.Split(V.Local.sData,V.Ambient.Tab,V.Local.sData)
+'	F.Intrinsic.File.File2String(V.Local.sData(3).Trim,V.Local.sData)
+'	F.Intrinsic.String.Split(V.Local.sData,V.Ambient.NewLine,V.Local.sBomSplit)
+'	V.Local.sData.Set("")
+'	V.Local.sFields.Set("Line*!*Seq*!*Part_Number*!*Description*!*Category*!*Source*!*Qty*!*On Hand*!*On Order*!*Required*!*Net*!*Router_Net*!*Parent*!*Lead_Days*!*Lead_Date*!*Part*!*Sort_Code")
+'	V.Local.sTypes.Set("Float*!*String*!*String*!*String*!*String*!*String*!*Float*!*Float*!*Float*!*Float*!*Float*!*Float*!*String*!*String*!*String*!*String*!*String")
+'	F.Intrinsic.Control.For(V.Local.i,7,V.Local.sBomSplit.UBound,1)
+'		F.Intrinsic.Control.If(V.Local.sBomSplit(V.Local.i).Trim,<>,"")
+'			F.Intrinsic.String.Split(V.Local.sBomSplit(V.Local.i).Trim,"|~|",V.Local.sTemp)
+'			F.Intrinsic.String.Replace(V.Local.sBomSplit(V.Local.i).Trim," ","",V.Local.sBomSplit(V.Local.i).Trim)
+'			F.Intrinsic.Control.If(V.Local.sData.Trim,=,"")
+'				V.Local.sData.Set(V.Local.sBomSplit(V.Local.i).Trim)
+'			F.Intrinsic.Control.Else
+'				F.Intrinsic.String.Build("{0}{1}{2}",V.Local.sData,V.Ambient.NewLine,V.Local.sBomSplit(V.Local.i).Trim,V.Local.sData)
+'			F.Intrinsic.Control.EndIf
+'		F.Intrinsic.Control.EndIf
+'	F.Intrinsic.Control.Next(V.Local.i)
+	F.Intrinsic.Control.If(V.DataTable.Bom.Exists)
+		F.Data.DataTable.Close("BOM")
+	F.Intrinsic.Control.EndIf
+'	
+'	F.Data.DataTable.CreateFromString("Bom",V.Local.sData,V.Local.sFields,V.Local.sTypes,"|~|",V.Ambient.NewLine,True)
+	
+	F.Intrinsic.Control.If(V.Local.bUseRev)
+		F.Intrinsic.String.RPad(V.Local.sParent," ",20,V.Local.sParent)
+		F.Intrinsic.String.Right(V.Local.sParent,3,V.Local.sRev)
+		F.Intrinsic.String.Left(V.Local.sParent,17,V.Local.sParent)
+	F.Intrinsic.Control.EndIf
+	
+	F.Global.Callwrapper.New("GetBomInfo","Manufacturing.BOM.GetInventoryStatus")
+	F.Global.Callwrapper.SetProperty("GetBomInfo","ParentNumber",V.Local.sParent.Trim)
+	F.Global.Callwrapper.SetProperty("GetBomInfo","ParentNumberRevision",V.Local.sRev.Trim)
+	F.Global.Callwrapper.SetProperty("GetBomInfo","Quantity","1")
+	F.Global.Callwrapper.SetProperty("GetBomInfo","LocationCodes",V.Local.sLocation.Trim)
+	
+	f.Global.Callwrapper.Run("GetBomInfo")
+	f.Global.Callwrapper.GetProperty("GetBomInfo","Status",v.Local.sStatus)
+
+	f.Intrinsic.Control.If(v.Local.sStatus,=,"BomNotFound")
+		F.Intrinsic.String.Build("Bom Not Found for WO: {0}",V.Screen.FormWOLabel!txtJob.Text,V.Local.sTemp)
+		F.Intrinsic.UI.Msgbox(V.Local.sTemp,"Attention")
+		
+		F.Data.DataTable.DeleteRow("Assembly")
+		F.Data.DataTable.AcceptChanges("Assembly")
+		
+		F.Data.DataTable.DeleteRow("Box")
+		F.Data.DataTable.AcceptChanges("Box")
+		
+		F.Intrinsic.UI.CloseWaitDialog
+		Gui.FormWOLabel..Enabled(True)
+		
+		F.Intrinsic.Control.ExitSub
+	
+	f.Intrinsic.Control.Else
+		f.Global.Callwrapper.GetProperty("GetBomInfo","BomData",v.Local.sRet)
+		f.Intrinsic.String.StringListToString(v.local.sRet,v.local.sDelimString)
+		
+		f.Data.DataTable.CreateFromString("Bom",v.Local.sDelimString,"Level*!*LongPart*!*Description*!*Category*!*Source*!*Qty*!*InventoryOH*!*InventoryOO*!*InventoryRequired*!*InventoryNet*!*BOMNet*!*Parent*!*LeadTime*!*LeadDate*!*Part*!*Sort*!*InventoryCost*!*BOMSetupQty*!*NonInv","Long*!*String*!*String*!*String*!*String*!*Float*!*Float*!*Float*!*Float*!*Float*!*Float*!*String*!*Long*!*String*!*String*!*String*!*Float*!*Float*!*String",v.Ambient.Tab,"*!*",true)
+	
+	f.Intrinsic.Control.EndIf
+	
+	F.Data.DataTable.AddColumn("Bom","SELECTION",Boolean,False)
+	F.Data.DataTable.AddColumn("Bom","WO",String,V.Screen.FormWOLabel!txtJob.Text)
+	F.Data.DataTable.AddColumn("Bom","WO_SUFFIX",String)
+	F.Data.DataTable.AddColumn("Bom","UM",String)
+	F.Data.DataTable.AddColumn("Bom","SO",String)
+	F.Data.DataTable.AddColumn("Bom","SO_LINE",String)
+	F.Data.DataTable.AddColumn("Bom","CUSTOMER_NAME",String)
+	F.Data.DataTable.AddColumn("Bom","LABEL_COPY",Float,V.Local.fQty)
+	F.Data.DataTable.AddColumn("Bom","BOX_NUMBER",Long)
+	F.Data.DataTable.AddColumn("Bom","KIT_MODEL",String,V.Local.sModel.Trim)
+	F.Data.DataTable.AddExpressionColumn("Bom","PP",String,"trim([Parent])+trim([Part])")
+
+	F.Data.DataView.Create("BOM","Temp",22,"Category like 'Phantom*' and (Source = 'MJ' or Source = 'MS') and [Level] = '3'","")
+	F.Data.DataTable.FillFromDictionary("Bom","Suffix","Parent","WO_SUFFIX")
+'	F.Data.DataTable.FillFromDictionary("Bom","Desc","Part","Description")
+	F.Data.DataTable.FillFromDictionary("Bom","SO","WO","SO")
+	F.Data.DataTable.FillFromDictionary("Bom","Line","WO_SUFFIX","SO_LINE")
+	F.Data.DataTable.FillFromDictionary("Bom","Tag","PP","Box_Number")
+	F.Data.DataTable.FillFromDictionary("Bom","UM","Part","UM")
+	F.Data.DataTable.FillFromDictionary("Bom","Cust","WO","CUSTOMER_NAME")
+'	F.Data.DataTable.FillFromDictionary("Bom","Desc","WO_SUFFIX","KIT_MODEL")
+	F.Data.Dictionary.Close("Suffix")
+'	F.Data.Dictionary.Close("Desc")
+	F.Data.Dictionary.Close("SO")
+	F.Data.Dictionary.Close("Line")
+	F.Data.Dictionary.Close("Tag")
+	F.Data.Dictionary.Close("UM")
+	F.Data.Dictionary.Close("Cust")
+	F.Data.DataView.ToDataTableDistinct("Bom","Temp","Temp","Selection*!*Part*!*Description*!*Qty*!*UM*!*Label_Copy",True)
+	F.Data.DataView.Close("Bom","Temp")
+
+	F.Data.DataTable.DeleteRow("Assembly")
+	F.Data.DataTable.AcceptChanges("Assembly")
+	F.Data.DataTable.Merge("Temp","Assembly",False,2)
+	F.Data.DataTable.Close("Temp")
+	
+	F.Data.DataView.Create("BOM","Temp",22,"Box_Number > 0","Box_Number")
+	F.Data.DataView.ToDataTableDistinct("Bom","Temp","Temp","Selection*!*Box_Number*!*SO*!*CUSTOMER_NAME*!*KIT_MODEL*!*Label_Copy",True)
+'	F.Intrinsic.Math.Mult(V.Local.fQty,3,V.Local.fQty)
+	V.Local.fQty.Set(2)
+	F.Data.DataView.Close("Bom","Temp")
+	F.Data.DataTable.DeleteRow("Box")
+	F.Data.DataTable.AcceptChanges("Box")
+	F.Data.DataTable.Merge("Temp","Box",False,2)
+	F.Data.DataTable.Close("Temp")
+	F.Data.DataTable.SetValue("Box",-1,"Label_Copy",V.Local.fQty)
+	F.ODBC.Connection!Con.Close
+	F.Intrinsic.UI.CloseWaitDialog
+	Gui.FormWOLabel..Enabled(True)
+F.Intrinsic.Control.Else
+	F.Data.DataTable.Create("Assembly",True)
+	F.Data.DataTable.AddColumn("Assembly","SELECTION",Boolean)
+	F.Data.DataTable.AddColumn("Assembly","PART",String)
+	F.Data.DataTable.AddColumn("Assembly","DESCRIPTION",String)
+	F.Data.DataTable.AddColumn("Assembly","QTY",String)
+	F.Data.DataTable.AddColumn("Assembly","UM",String)
+	F.Data.DataTable.AddColumn("Assembly","LABEL_COPY",Long)
+	
+	F.Data.DataView.Create("Assembly","VAssembly",22,"SELECTION = True","")
+	
+	F.Data.DataTable.Create("Box",True)
+	F.Data.DataTable.AddColumn("Box","SELECTION",Boolean)
+	F.Data.DataTable.AddColumn("Box","BOX_NUMBER",String)
+	F.Data.DataTable.AddColumn("Box","SO",String)
+	F.Data.DataTable.AddColumn("Box","CUSTOMER_NAME",String)
+	F.Data.DataTable.AddColumn("Box","KIT_MODEL",String)
+	F.Data.DataTable.AddColumn("Box","LABEL_COPY",String)
+	
+	F.Data.DataView.Create("Box","VBox",22,"SELECTION = True","")
+	
+	F.ODBC.Connection!Conc.OpenCommonConnection
+	F.Intrinsic.String.Build("Select rtrim(Sentinelalias),rtrim(Sentinelalias) From Server_Printers Where Sentinelenabled = 1 Order by Sentinelalias","",V.Local.sSql)
+	F.Data.Dictionary.CreateFromSQL("PRINTER","conC",V.Local.sSql)
+	F.ODBC.Connection!Conc.Close
+	Gui.FormWOLabel.ddlPrinter.AddItem("")
+	Gui.FormWOLabel.ddlPrinter.AddItems("Dictionary","PRINTER")
+	Gui.FormWOLabel.ddlPrinter2.AddItem("")
+	Gui.FormWOLabel.ddlPrinter2.AddItems("Dictionary","PRINTER")
+	F.Data.Dictionary.Close("Printer")
+	
+	F.Global.BI.GetIDFromName("GCG_6812_Assembly_Label.lab",V.Global.iAssembly)
+	F.Global.BI.GetIDFromName("GCG_6812_Box_Label.lab",V.Global.iBox)
+
+	Gui.FormWOLabel..ContextMenuCreate("ctxAssembly")
+	Gui.FormWOLabel.GsGridAssembly.ContextMenuAttach("ctxAssembly")
+	Gui.FormWOLabel..ContextMenuAddItem("ctxAssembly","SELECT",0,"Select All")
+	Gui.FormWOLabel..ContextMenuAddItem("ctxAssembly","UNSELECT",0,"Un-Select All")
+	Gui.FormWOLabel..ContextMenuSetItemEventHandler("ctxAssembly","SELECT","MenuClick")
+	Gui.FormWOLabel..ContextMenuSetItemEventHandler("ctxAssembly","UNSELECT","MenuClick")
+	
+	Gui.FormWOLabel..ContextMenuCreate("ctxBox")
+	Gui.FormWOLabel.GsGridBox.ContextMenuAttach("ctxBox")
+	Gui.FormWOLabel..ContextMenuAddItem("ctxBox","SELECT",0,"Select All")
+	Gui.FormWOLabel..ContextMenuAddItem("ctxBox","UNSELECT",0,"Un-Select All")
+	Gui.FormWOLabel..ContextMenuSetItemEventHandler("ctxBox","SELECT","MenuClick")
+	Gui.FormWOLabel..ContextMenuSetItemEventHandler("ctxBox","UNSELECT","MenuClick")
+	
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Get_Data_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6812_Work_Order_Label.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormWOLabel_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Get_Data.End
+
+Program.Sub.Set_Prop.Start
+F.Intrinsic.Control.SetErrorHandler("Set_Prop_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+
+'Box Number is frist two digits.
+
+Gui.FormWOLabel.GsGridAssembly.AddGridviewFromDatatable("GAssembly","Assembly")
+GUI.FormWOLabel.GsGridAssembly.SetGridviewProperty("GAssembly", "OptionsViewColumnAutoWidth", True)
+
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","SELECTION","headerforecolor", v.Color.PRI-GSS-00)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","SELECTION","headerfontbold", True)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","SELECTION","caption","Select")
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","SELECTION","readonly", False)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","SELECTION","allowedit", True)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","SELECTION","MaxWidth", 50)
+
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","PART","headerforecolor", v.Color.PRI-GSS-00)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","PART","headerfontbold", True)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","PART","caption","Part")
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","PART","readonly", True)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","PART","allowedit", False)
+
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","DESCRIPTION","headerforecolor", v.Color.PRI-GSS-00)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","DESCRIPTION","headerfontbold", True)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","DESCRIPTION","caption","Description")
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","DESCRIPTION","readonly", True)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","DESCRIPTION","allowedit", False)
+
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","QTY","headerforecolor", v.Color.PRI-GSS-00)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","QTY","headerfontbold", True)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","QTY","caption","Qty")
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","QTY","readonly", True)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","QTY","allowedit", False)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","QTY","MaxWidth", 50)
+
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","UM","headerforecolor", v.Color.PRI-GSS-00)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","UM","headerfontbold", True)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","UM","caption","UM")
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","UM","readonly", True)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","UM","allowedit", False)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","UM","MaxWidth", 50)
+
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","LABEL_COPY","headerforecolor", v.Color.PRI-GSS-00)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","LABEL_COPY","headerfontbold", True)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","LABEL_COPY","caption","# Labels")
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","LABEL_COPY","readonly", False)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","LABEL_COPY","allowedit", True)
+gui.FormWOLabel.GsGridAssembly.SetColumnProperty("GAssembly","LABEL_COPY","MaxWidth", 65)
+
+Gui.FormWOLabel.GsGridAssembly.MainView("GAssembly")
+
+Gui.FormWOLabel.GsGridBox.AddGridviewFromDatatable("GBox","Box")
+GUI.FormWOLabel.GsGridBox.SetGridviewProperty("GBox", "OptionsViewColumnAutoWidth", True)
+
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SELECTION","headerforecolor", v.Color.PRI-GSS-00)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SELECTION","headerfontbold", True)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SELECTION","caption","Select")
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SELECTION","readonly", False)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SELECTION","allowedit", True)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SELECTION","MaxWidth", 50)
+
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","PART","headerforecolor", v.Color.PRI-GSS-00)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","PART","headerfontbold", True)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","PART","caption","Part")
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","PART","readonly", True)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","PART","allowedit", False)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","PART","MaxWidth", 80)
+
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","DESCRIPTION","headerforecolor", v.Color.PRI-GSS-00)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","DESCRIPTION","headerfontbold", True)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","DESCRIPTION","caption","Description")
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","DESCRIPTION","readonly", True)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","DESCRIPTION","allowedit", False)
+
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","BOX_NUMBER","headerforecolor", v.Color.PRI-GSS-00)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","BOX_NUMBER","headerfontbold", True)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","BOX_NUMBER","caption","Box #")
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","BOX_NUMBER","readonly", True)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","BOX_NUMBER","allowedit", False)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","BOX_NUMBER","MaxWidth", 80)
+
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SO","headerforecolor", v.Color.PRI-GSS-00)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SO","headerfontbold", True)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SO","caption","Sales Order")
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SO","readonly", True)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SO","allowedit", False)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SO","MaxWidth", 80)
+
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","CUSTOMER_NAME","headerforecolor", v.Color.PRI-GSS-00)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","CUSTOMER_NAME","headerfontbold", True)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","CUSTOMER_NAME","caption","Customer")
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","CUSTOMER_NAME","readonly", True)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","CUSTOMER_NAME","allowedit", False)
+
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","Kit_MODEL","headerforecolor", v.Color.PRI-GSS-00)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","Kit_MODEL","headerfontbold", True)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","Kit_MODEL","caption","Kit Model")
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","Kit_MODEL","readonly", True)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","Kit_MODEL","allowedit", False)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","Kit_MODEL","MaxWidth", 65)
+
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SO_LINE","headerforecolor", v.Color.PRI-GSS-00)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SO_LINE","headerfontbold", True)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SO_LINE","caption","SO Line")
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SO_LINE","readonly", True)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SO_LINE","allowedit", False)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","SO_LINE","MaxWidth", 65)
+
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","WO","headerforecolor", v.Color.PRI-GSS-00)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","WO","headerfontbold", True)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","WO","caption","Work Order")
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","WO","readonly", True)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","WO","allowedit", False)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","WO","MaxWidth", 80)
+
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","WO_SUFFIX","headerforecolor", v.Color.PRI-GSS-00)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","WO_SUFFIX","headerfontbold", True)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","WO_SUFFIX","caption","Suffix")
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","WO_SUFFIX","readonly", True)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","WO_SUFFIX","allowedit", False)
+'gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","WO_SUFFIX","MaxWidth", 65)
+
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","LABEL_COPY","headerforecolor", v.Color.PRI-GSS-00)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","LABEL_COPY","headerfontbold", True)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","LABEL_COPY","caption","# Labels")
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","LABEL_COPY","readonly", False)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","LABEL_COPY","allowedit", True)
+gui.FormWOLabel.GsGridBox.SetColumnProperty("GBox","LABEL_COPY","MaxWidth", 65)
+
+Gui.FormWOLabel.GsGridBox.MainView("GBox")
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Set_Prop_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6812_Work_Order_Label.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormWOLabel_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.Set_Prop.End
+
+Program.Sub.MenuClick.Start
+F.Intrinsic.Control.SetErrorHandler("MenuClick_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String,"")
+
+F.Intrinsic.Control.SelectCase(V.Args.MenuName.UCase)
+	F.Intrinsic.Control.Case("CTXASSEMBLY")
+		F.Intrinsic.Control.If(V.DataTable.Assembly.RowCount--,<>,-1)
+			F.Intrinsic.Control.If(V.Args.ItemName.UCase,=,"SELECT")
+				F.Data.DataTable.SetValue("Assembly",-1,"Selection",True)
+			F.Intrinsic.Control.Else
+				F.Data.DataTable.SetValue("Assembly",-1,"Selection",False)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Case("CTXBOX")
+		F.Intrinsic.Control.If(V.DataTable.Box.RowCount--,<>,-1)
+			F.Intrinsic.Control.If(V.Args.ItemName.UCase,=,"SELECT")
+				F.Data.DataTable.SetValue("Box",-1,"Selection",True)
+			F.Intrinsic.Control.Else
+				F.Data.DataTable.SetValue("Box",-1,"Selection",False)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("MenuClick_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	F.Intrinsic.String.Build("Project: GCG_6812_Work_Order_Label.g2u {0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}",V.Ambient.NewLine,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(FormWOLabel_UnLoad)
+Function.Intrinsic.Control.EndIf
+Program.Sub.MenuClick.End
+
+Program.Sub.Comments.Start
+${$5$}$2.0.0.0$}$2
+${$6$}$rking$}$20221012064801918$}$QNdZLVy4bWuiWa9jh1ZTiKVzNnEzrvL4kN1itPYKGXYaVU3HMB12pCsBbGUVVx9m362iGGTO50A=
+Program.Sub.Comments.End
